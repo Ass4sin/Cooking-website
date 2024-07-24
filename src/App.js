@@ -1,9 +1,7 @@
-import React from 'react';
+import { AppBody } from "./components/AppBody/Home/Home";
 
 export default function App() {
-    return (
-        <div>
-            <h1>Welcome to My Cooking Website</h1>
-        </div>
-    );
+  return(
+    <AppBody></AppBody>
+  )
 }
