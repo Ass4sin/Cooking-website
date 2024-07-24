@@ -5,30 +5,12 @@ export default function MainSection() {
     return(
         <main>
             <div>
-                <FetchData></FetchData>
+                {/* we ill add the a carousel of images from the EDAMAM API */}
             </div>
         </main>
     )
 }
 
-function FetchData() {
-    const [food, setFood] = useState([]);
-    useEffect(() => {
-        fetch("https://api.edamam.com/doc/open-api/recipe-search-v2.json")
-        .then((res) => {
-            console.log(res);
-            // return res.json;
-        })
-        .then((data) => {
-            console.log(data);
-            setFood(data);
-        })
-    },[])
-    return(
-        <div>
-            
-        </div>
-    )
-}
+// this function will serve to call the api and get the images
 
 export {MainSection};
