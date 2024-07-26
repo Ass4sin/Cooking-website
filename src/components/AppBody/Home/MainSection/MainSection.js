@@ -10,6 +10,7 @@ export default function MainSection() {
 
     const [query, setQuery] = useState('rice');
     const [recipeImages, setRecipeImage] = useState([]);
+    const [imageId, setImageId] = useState(0)
 
     useEffect(() => {
         // Fetch the data from the API
@@ -23,14 +24,27 @@ export default function MainSection() {
             });
     }, [query]);
 
+    function increaseImage() {
+        
+        setImageId(prevCount => prevCount + 1)
+    }
+
+    function decreaseImage() {
+        if (imageId === 0) {
+            setImageId(0);
+            return;
+        }
+        setImageId(prevCount => prevCount - 1)
+    }
+
     return (
         <>
             <main>
                 <div className="main-container">
                     <div className="image-container">
-                        <FontAwesomeIcon icon={faArrowLeft} id="arrow-left" />
-                        {recipeImages.length > 0 && <img src={recipeImages[0]} alt="Recipe" />}
-                        <FontAwesomeIcon icon={faArrowRight} id="arrow-right"/>
+                        <FontAwesomeIcon icon={faArrowLeft} id="arrow-left" onClick={decreaseImage}/>
+                        {recipeImages.length > 0 && <img src={recipeImages[imageId]} alt="Recipe" />}
+                        <FontAwesomeIcon icon={faArrowRight} id="arrow-right" onClick={increaseImage}/>
                     </div>
                 </div>
             </main>
