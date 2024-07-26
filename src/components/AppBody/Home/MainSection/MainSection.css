@@ -1,3 +1,30 @@
-main{
-    height: 100vh;
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
 }
+
+.image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container img {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 20px;
+}
+
+#arrow-left, #arrow-right {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+
