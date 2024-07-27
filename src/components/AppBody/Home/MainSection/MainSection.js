@@ -12,8 +12,6 @@ export default function MainSection() {
     const [recipeImages, setRecipeImage] = useState([]);
     const [imageId, setImageId] = useState(0)
     const image = document.querySelector('img');
-    const rightArrow = document.querySelector("#arrow-right");
-    const leftArrow = document.querySelector("#arrow-left");
 
     useEffect(() => {
         // Fetch the data from the API
