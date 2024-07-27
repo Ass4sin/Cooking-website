@@ -26,6 +26,7 @@ export default function MainSection() {
     }, [query]);
 
     function increaseImage() {
+        //recipeImages.length has to be at -2, for somereason imageId does 0 twice
         if (imageId > recipeImages.length - 2){
             return imageId;
         }
@@ -45,6 +46,7 @@ export default function MainSection() {
     }
 
     function addAnimation() {
+        //we add the class animation for the transition and then remove it
         image.classList.add("animation")
         setTimeout(() => {
             image.classList.remove("animation")

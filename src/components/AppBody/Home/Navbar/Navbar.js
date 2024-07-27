@@ -9,7 +9,7 @@ export default function Navbar() {
                 </a>
             </div>
             <div id="Recipes">
-                <a href="">
+                <a href="../../../../../public/work.html">
                 Recipes
                 </a>
             </div>
@@ -18,4 +18,3 @@ export default function Navbar() {
 }
 
 export {Navbar};
-
