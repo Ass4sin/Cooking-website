@@ -11,6 +11,9 @@ export default function MainSection() {
     const [query, setQuery] = useState('rice');
     const [recipeImages, setRecipeImage] = useState([]);
     const [imageId, setImageId] = useState(0)
+    const image = document.querySelector('img');
+    const rightArrow = document.querySelector("#arrow-right");
+    const leftArrow = document.querySelector("#arrow-left");
 
     useEffect(() => {
         // Fetch the data from the API
@@ -25,8 +28,13 @@ export default function MainSection() {
     }, [query]);
 
     function increaseImage() {
-        
-        setImageId(prevCount => prevCount + 1)
+        if (imageId > recipeImages.length - 2){
+            return imageId;
+        }
+        console.log("RECIPE LENGTH",recipeImages.length);
+        setImageId(imageId + 1)
+        addAnimation();
+        console.log(imageId);
     }
 
     function decreaseImage() {
@@ -35,6 +43,14 @@ export default function MainSection() {
             return;
         }
         setImageId(prevCount => prevCount - 1)
+        addAnimation();
+    }
+
+    function addAnimation() {
+        image.classList.add("animation")
+        setTimeout(() => {
+            image.classList.remove("animation")
+        }, 700);
     }
 
     return (
