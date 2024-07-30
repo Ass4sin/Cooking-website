@@ -53,6 +53,17 @@ export default function MainSection() {
         }, 700);
     }
 
+    function changeQuery() {
+        let input = document.querySelector("#query").value;
+        
+        if (input === "") {
+            return;
+        }
+
+        setQuery(input)
+        document.querySelector("#query").value = "";
+    }
+
     return (
         <>
             <main>
@@ -61,6 +72,13 @@ export default function MainSection() {
                         <FontAwesomeIcon icon={faArrowLeft} id="arrow-left" onClick={decreaseImage}/>
                         {recipeImages.length > 0 && <img src={recipeImages[imageId]} alt="Recipe" />}
                         <FontAwesomeIcon icon={faArrowRight} id="arrow-right" onClick={increaseImage}/>
+                    </div>
+                </div>
+                <div className="description">
+                    This is a selection of recipes with <span>{query}</span>
+                    <div>You can change the ingredient by typing here 
+                        <input id="query"></input>
+                        <button id="query-change" onClick={changeQuery}>Change</button>
                     </div>
                 </div>
             </main>

@@ -53,3 +53,38 @@ img{
 .animation{
     animation: transition forwards 0.5s;
 }
+
+.description{
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.description > span{
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.description > div{
+    margin-top: 15px;
+}
+
+#query{
+    margin-left: 5px;
+    border-radius: 20px;
+    background-color: transparent;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+#query-change{
+    background-color: transparent;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 15px;
+}
+
+#query-change:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
